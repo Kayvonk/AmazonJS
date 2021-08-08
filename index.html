@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="./firebase.js"></script>
+    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async
         integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
         </script>
@@ -244,143 +247,7 @@
                         Hot Deals 🔥
                     </h1>
                     <div class="main-section-products flex justify-between">
-                        <div class="main-product">
-                            <div class="product-image w-52 h-52 bg-white rounded-lg">
-                                <img class="w-full h-full object-contain p-4" src="ps5.png">
-                            </div>
-                            <div class="product-make text-gray-700 font-bold">
-                                Sony Playstation 5 (White)
-                            </div>
-                            <div class="product-make text-green-700 font-bold">
-                                Sony
-                            </div>
-                            <div class="product-rating flex items-center">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <span class="mt-1 ml-1 text-yellow-500 font-bold">4.9</span>
-                            </div>
-                            <div class="flex">
-                                <div class="product-price font-bold text-gray-700">
-                                    399.99
-                                </div>
-                                <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                    499.99
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-product">
-                            <div class="product-image w-52 h-52 bg-white rounded-lg">
-                                <img class="w-full h-full object-contain p-4" src="taoofprogramming.jpg">
-                                <div>
-                                </div>
-                                <div class="product-make text-gray-700 font-bold">
-                                    The Tao of Programming
-                                </div>
-                                <div class="product-make text-green-700 font-bold">
-                                    Geoffrey James
-                                </div>
-                                <div class="product-rating flex items-center">
-                                    <img class="w-6 h-6" src="star.png">
-                                    <img class="w-6 h-6" src="star.png">
-                                    <img class="w-6 h-6" src="star.png">
-                                    <img class="w-6 h-6" src="star.png">
-                                    <img class="w-6 h-6" src="half-star.png">
-                                    <span class="mt-1 ml-1 text-yellow-500 font-bold">4.6</span>
-                                </div>
-                                <div class="flex">
-                                    <div class="product-price font-bold text-gray-700">
-                                        19.99
-                                    </div>
-                                    <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                        59.99
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-product">
-                            <div class="product-image w-52 h-52 bg-white rounded-lg">
-                                <img class="w-full -h-full object-contain p-4" src="desk.jpg">
-                            </div>
-                            <div class="product-make text-gray-700 font-bold">
-                                Adjustable Height Desk
-                            </div>
-                            <div class="product-make text-green-700 font-bold">
-                                FAMREE Store
-                            </div>
-                            <div class="product-rating flex items-center">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="half-star.png">
-                                <span class="mt-1 ml-1 text-yellow-500 font-bold">4.7</span>
-                            </div>
-                            <div class="flex">
-                                <div class="product-price font-bold text-gray-700">
-                                    140.99
-                                </div>
-                                <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                    299.99
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-product">
-                            <div class="product-image w-52 h-52 bg-white rounded-lg">
-                                <img class="w-full h-full object-contain p-4" src="batman.jpg">
-                            </div>
-                            <div class="product-make text-gray-700 font-bold">
-                                Batman Halloween Costume
-                            </div>
-                            <div class="product-make text-green-700 font-bold">
-                                Costumes USA
-                            </div>
-                            <div class="product-rating flex items-center">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="half-star.png">
-                                <span class="mt-1 ml-1 text-yellow-500 font-bold">4.5</span>
-                            </div>
-                            <div class="flex">
-                                <div class="product-price font-bold text-gray-700">
-                                    34.99
-                                </div>
-                                <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                    69.99
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-product">
-                            <div class="product-image w-52 h-52 bg-white rounded-lg">
-                                <img class="w-full h-full object-contain p-4" src="yoda.jpg">
-                            </div>
-                            <div class="product-make text-gray-700 font-bold">
-                                THE MANDALORIAN: The Child
-                            </div>
-                            <div class="product-make text-green-700 font-bold">
-                                Brand: The Mandalorian
-                            </div>
-                            <div class="product-rating flex items-center">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <img class="w-6 h-6" src="star.png">
-                                <span class="mt-1 ml-1 text-yellow-500 font-bold">4.9</span>
-                            </div>
-                            <div class="flex">
-                                <div class="product-price font-bold text-gray-700">
-                                    19.99
-                                </div>
-                                <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                    29.99
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
