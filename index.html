@@ -7,17 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="./firebase.js"></script>
     <script src="./script.js"></script>
+    <script src="./header.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async
         integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
         </script>
-    <title>AmazonJS</title>
+    <title>Kshop</title>
 </head>
 
 <body>
@@ -63,8 +62,7 @@
                     <div
                         class="cart-icon relative h-10 w-10 text-gray-600 bg-green-500 hover:bg-green-400 flex items-center justify-center rounded-xl">
                         <div
-                            class="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex justify-center items-center">
-                            1
+                            class="cart-item-number text-xs absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex justify-center items-center">
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -86,7 +84,7 @@
             </div>
         </div>
         <div class="main h-full flex">
-            <div class="siderbar w-1/5 bg-gray-900 border-t-2 border-gray-700">
+            <div class="hidden md:block siderbar bg-gray-900 border-t-2 border-gray-700">
                 <div class="sidebar-categories p-6 font-bold">
                     <div
                         class="main-catergories flex text-green-400 bg-gray-700 cursor-pointer rounded-lg text-xl p-2 ">
@@ -152,16 +150,16 @@
                 </div>
             </div>
             <div class="main-section flex-1 p-6">
-                <div class="banner w-full h-96 rounded-xl flex">
+                <div class="w-auto banner h-96 rounded-xl flex items-end">
                     <div
-                        class="button  bg-white w-44 h-16 rounded-full flex items-center justify-center cursor-pointer m-4 text-white bg-green-500 hover:bg-green-600">
+                        class="button bg-white w-44 h-16 rounded-full flex items-center justify-center cursor-pointer m-4 text-white bg-green-500 hover:bg-green-600">
                         <span class="text-lg font-bold">
                             Browse Products
                         </span>
                     </div>
                 </div>
                 <div class="main-section-categories mt-10">
-                    <div class="popular-categories flex items-center mb-6">
+                    <div class="popular-categories flex items-center">
                         <h1 class="font-bold text-gray-700 text-2xl">
                             Popular Categories
                         </h1>
@@ -173,9 +171,9 @@
                             </svg>
                         </span>
                     </div>
-                    <div class="categories mt-2 flex">
+                    <div class="categories flex flex-wrap">
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -183,7 +181,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -191,7 +189,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -199,7 +197,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -207,7 +205,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -217,7 +215,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -225,7 +223,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -233,7 +231,7 @@
                             </svg>
                         </div>
                         <div
-                            class="icon-desktop h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 mx-3 bg-white rounded-xl flex items-center justify-center">
+                            class="icon-desktop mr-6 mt-5 h-16 w-16 text-gray-500 border border-white hover:border-gray-300 p-4 bg-white rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -243,10 +241,10 @@
                     </div>
                 </div>
                 <div class="main-section-deals mt-6">
-                    <h1 class="hot-deals font-bold text-gray-700 text-2xl mb-6">
+                    <h1 class="hot-deals font-bold text-gray-700 text-2xl">
                         Hot Deals 🔥
                     </h1>
-                    <div class="main-section-products flex justify-between">
+                    <div class="main-section-products flex flex-wrap">
 
                     </div>
                 </div>

@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="./firebase.js"></script>
+    <script src="./header.js"></script>
+    <script src="./cart.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async
         integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
         </script>
-    <title>AmazonJS</title>
+    <title>Kshop</title>
 </head>
 
 <body>
@@ -61,8 +62,7 @@
                     <div
                         class="cart-icon relative h-10 w-10 text-gray-600 bg-green-500 hover:bg-green-400 flex items-center justify-center rounded-xl">
                         <div
-                            class="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex justify-center items-center">
-                            1
+                            class="cart-item-number text-xs absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex justify-center items-center">
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="main h-full flex">
-            <div class="siderbar w-1/5 bg-gray-900 border-t-2 border-gray-700">
+            <div class="hidden md:block siderbar w-1/5 bg-gray-900 border-t-2 border-gray-700">
                 <div class="sidebar-categories p-6 font-bold">
                     <div
                         class="main-catergories flex text-green-400 bg-gray-700 cursor-pointer rounded-lg text-xl p-2 ">
@@ -158,102 +158,15 @@
                     <span class="w-14"></span>
                 </div>
                 <div class="cart-items mt-6">
-                    <div class="cart-item flex items-center border-b border-gray-200 py-6">
-                        <div class="cart-item-image w-40 h-24 bg-white p4 rounded-lg">
-                            <img class="w-full h-full object-contain" src="desk.jpg">
-                        </div>
-                        <div class="cart-item-details flex-grow">
-                            <div class=" cart-item-title font-bold text-sm text-gray-600">
-                                Adjustable Height Desk
-                            </div>
-                            <div class="cart-item-brand text-sm text-gray-400">
-                                FAMREE Store
-                            </div>
-                        </div>
-                        <div class="cart-item-counter w-48 flex items-center">
-                            <div
-                                class="chevron-left cursor-pointer text-gray-500 bg-gray-100 hover:bg-gray-200 w-6 h-6 flex items-center justify-center rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </div>
-                            <h4 class="text-gray-500 mx-1">x1</h4>
-                            <div
-                                class="chevron-right cursor-pointer text-gray-500 bg-gray-100 hover:bg-gray-200 w-6 h-6 flex items-center justify-center rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="cart-item-total-cost w-48 font-bold text-gray-400">
-                            $140.99
-                        </div>
-                        <div
-                            class="cart-item-delete w-14 text-gray-400 cursor-pointer bg-white p-4 hover:bg-gray-100 rounded-full active:bg-gray-200">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </div>
+                </div>
+                <div class="complete-order mt-8 flex items-center justify-end">
+                    <div class="total-cost">
+                        <h2 class="text-gray-400">Total Cost</h2>
+                        <div class="total-cost-amount font-bold text-3xl text-gray-600"></div>
                     </div>
-                    <div class="cart-item flex items-center border-b border-gray-200 py-6">
-                        <div class="cart-item-image w-40 h-24 bg-white p4 rounded-lg">
-                            <img class="w-full h-full object-contain" src="ps5.png">
-                        </div>
-                        <div class="cart-item-details flex-grow">
-                            <div class=" cart-item-title font-bold text-sm text-gray-600">
-                                Sony Playstation 5 (White)
-                            </div>
-                            <div class="cart-item-brand text-sm text-gray-400">
-                                Sony
-                            </div>
-                        </div>
-                        <div class="cart-item-counter w-48 flex items-center">
-                            <div
-                                class="chevron-left cursor-pointer text-gray-500 bg-gray-100 hover:bg-gray-200 w-6 h-6 flex items-center justify-center rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </div>
-                            <h4 class="text-gray-500 mx-1">x1</h4>
-                            <div
-                                class="chevron-right cursor-pointer text-gray-500 bg-gray-100 hover:bg-gray-200 w-6 h-6 flex items-center justify-center rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="cart-item-total-cost w-48 font-bold text-gray-400">
-                            $399.99
-                        </div>
-                        <div
-                            class="cart-item-delete w-14 text-gray-400 cursor-pointer bg-white p-4 hover:bg-gray-100 rounded-full active:bg-gray-200">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="complete-order mt-8 flex items-center justify-end">
-                        <div class="total-cost">
-                            <h2 class="text-gray-400">Total Cost</h2>
-                            <div class="total-cost-amount font-bold text-3xl text-gray-600"> $1,000,000</div>
-                        </div>
-                        <div
-                            class="complete-order-button cursor-pointer bg-blue-500 hover:bg-blue-600 w-56 p-6 ml-6 rounded flex items-center justify-center font-bold text-white">
-                            Complete Order</div>
-                    </div>
-
+                    <div
+                        class="complete-order-button cursor-pointer bg-blue-500 hover:bg-blue-600 w-56 p-6 ml-6 rounded flex items-center justify-center font-bold text-white">
+                        Complete Order</div>
                 </div>
             </div>
         </div>
