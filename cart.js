@@ -17,7 +17,7 @@ function getTotalCost(items) {
     items.forEach((item) => {
         totalCost += (item.price * item.quantity);
     })
-    document.querySelector(".total-cost-amount").innerText = numeral(totalCost).format('$0,0.00');
+    document.querySelector(".total-cost-amount").innerText = totalCost;
 }
 
 function decreaseCount(itemId) {
@@ -84,7 +84,7 @@ function generateCartItems(cartItems) {
                     </div>
                 </div>
                 <div class="cart-item-total-cost w-48 font-bold text-gray-400">
-                    ${numeral(item.price * item.quantity).format('$0,0.00')}
+                    ${item.price * item.quantity}
                 </div>
                 <div data-id="${item.id}"  class="cart-item-delete w-10 font-bold text-gray-300 cursor-pointer hover:text-gray-400">
                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"

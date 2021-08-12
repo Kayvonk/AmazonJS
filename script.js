@@ -61,10 +61,10 @@ function generateItems(items) {
                             </div>
                             <div class="flex">
                                 <div class="product-price font-bold text-gray-700">
-                                     ${numeral(item.price).format('$0,0.00')}
+                                     ${item.price}
                                         </div>
                                 <div class="product-price ml-3 font-bold text-gray-400 line-through">
-                                     ${numeral(item.undiscounted).format('$0,0.00')}
+                                     ${item.undiscounted}
                                         </div>
                             </div>
                             </div>
