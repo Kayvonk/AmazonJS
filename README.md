@@ -11,7 +11,7 @@
 
 ## Description
 
-This application is built using HTML, JavaScript, and Tailwind CSS. The webpage is a simulated online marketplace made with the purpose of practicing JavaScript and front-end design.
+This application is built using HTML, JavaScript, and Tailwind CSS. The page also uses Firebase for hosting and Firestore as a live database. The webpage is a simulated online marketplace made with the purpose of practicing JavaScript and front-end design.
 
 ## Usage
 
